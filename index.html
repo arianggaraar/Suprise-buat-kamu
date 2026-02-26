@@ -121,6 +121,74 @@
     height: auto;
   }
 }
+
+@media (max-width: 480px) {
+  #carousel .viewport {
+    height: 200px; /* lebih pendek agar muat */
+  }
+
+  .track {
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    padding: 6px; /* kurangi padding */
+  }
+
+  .arrow,
+  .heart {
+    width: 48px;
+    height: 48px;
+  }
+
+  .heart {
+    right: 12px; /* mendekati tepi agar tidak terlalu ke tengah */
+  }
+
+  #dragger {
+    width: 48px;
+    height: 48px;
+  }
+
+  .stage {
+    padding: 16px; /* kurangi padding kiri‑kanan */
+  }
+
+  .countdown .unit {
+    min-width: 50px;
+    padding: 8px;
+  }
+
+  .choice-wrap {
+    flex-direction: column; /* tumpuk tombol vertikal */
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 24px; /* judul lebih kecil */
+  }
+
+  .slider-wrap .u-small {
+    font-size: 12px; /* teks bantu lebih kecil */
+  }
+
+  .slider-wrap {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+  /* pastikan carousel tidak melebihi layar */
+  #carousel {
+    max-width: 100%;
+  }
+
+  .slide {
+    max-width: 100%;
+    height: auto;
+  }
+}
 </style>
 </head>
 <body>
