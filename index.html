@@ -32,6 +32,14 @@
   #slides{display:flex;height:100%;transition:transform 600ms ease}
   .slide{display:block;width:100%;height:100%;object-fit:cover;flex-shrink:0}
 
+  .slider-wrap {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
   .u-small{font-size:13px;color:var(--muted);margin-top:8px}
 
   .btn{padding:10px 16px;border-radius:999px;border:0;cursor:pointer}
@@ -46,11 +54,73 @@
 
   .asset-warning{color:#ffb3b3;font-size:13px;margin-top:8px}
 
-  @media (max-width:520px){
-    #carousel .viewport{height:240px}
-    .track{width:300px}
-    .stage{padding:20px}
+@media (max-width: 520px) {
+  #carousel .viewport {
+    height: 200px; /* lebih pendek agar muat */
   }
+
+  .track {
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    padding: 6px; /* kurangi padding */
+  }
+
+  .arrow,
+  .heart {
+    width: 48px;
+    height: 48px;
+  }
+
+  .heart {
+    right: 12px; /* mendekati tepi agar tidak terlalu ke tengah */
+  }
+
+  #dragger {
+    width: 48px;
+    height: 48px;
+  }
+
+  .stage {
+    padding: 16px; /* kurangi padding kiri‑kanan */
+  }
+
+  .countdown .unit {
+    min-width: 50px;
+    padding: 8px;
+  }
+
+  .choice-wrap {
+    flex-direction: column; /* tumpuk tombol vertikal */
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 24px; /* judul lebih kecil */
+  }
+
+  .slider-wrap .u-small {
+    font-size: 12px; /* teks bantu lebih kecil */
+  }
+
+  .slider-wrap {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+  /* pastikan carousel tidak melebihi layar */
+  #carousel {
+    max-width: 100%;
+  }
+
+  .slide {
+    max-width: 100%;
+    height: auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -304,7 +374,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     music.addEventListener('canplaythrough', onCan);
     music.addEventListener('error', onError);
     // fallback: if no canplay/error within 1200ms, show message
-    setTimeout(()=>{ if(!audioOk){ showWarning('Musik mungkin tidak dimuat otomatis. Jika file ada, coba jalankan via server (python -m http.server)'); } }, 1200);
   }
 
   // Upload handlers
