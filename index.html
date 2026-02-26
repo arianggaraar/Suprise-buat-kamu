@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Untuk Kamu ❤️ — Surprise</title>
+<style>
+  :root{--bg:#0f1724;--card:#0b1220;--accent:#ff6b81;--muted:#9aa4b2;color-scheme:dark}
+  html,body{height:100%;min-height:100vh;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071025 0%, #07111a 100%);color:#e6eef6}
+  body{display:flex;align-items:center;justify-content:center;padding:20px;-webkit-font-smoothing:antialiased;overflow-y:auto}
+
+  .paper{width:100%;max-width:780px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.7);overflow:hidden}
+  .stage{padding:36px;min-height:520px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+
+  .block{text-align:center;max-width:760px}
+  h1{margin:0 0 12px;font-size:28px}
+  p{margin:8px 0;color:var(--muted)}
+
+  .from-left{opacity:0;transform:translateX(-30px);animation:fadeLeft 700ms ease forwards}
+  @keyframes fadeLeft{to{opacity:1;transform:none}}
+
+  .slider-wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:20px}
+  .track{width:420px;height:68px;border-radius:34px;background:rgba(255,255,255,0.03);position:relative;display:flex;align-items:center;padding:8px}
+  .arrow{width:56px;height:56px;border-radius:28px;background:linear-gradient(180deg,#fff 0%,#ffd6dd 100%);display:flex;align-items:center;justify-content:center;cursor:grab}
+  .heart{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;right:24px}
+
+  .hidden{display:none}
+
+  /* carousel responsive */
+  #carousel{width:100%;max-width:640px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(5,7,13,0.7);margin-top:18px;position:relative}
+  #carousel .viewport{width:100%;height:320px;overflow:hidden;position:relative}
+  #slides{display:flex;height:100%;transition:transform 600ms ease}
+  .slide{display:block;width:100%;height:100%;object-fit:cover;flex-shrink:0}
+
+  .u-small{font-size:13px;color:var(--muted);margin-top:8px}
+
+  .btn{padding:10px 16px;border-radius:999px;border:0;cursor:pointer}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+  .choice-wrap{margin-top:20px;display:flex;align-items:center;gap:18px;position:relative}
+  .tricky{position:relative}
+
+  .countdown{display:flex;gap:12px;justify-content:center;margin-top:18px}
+  .countdown .unit{background:rgba(255,255,255,0.03);padding:12px 16px;border-radius:10px;min-width:68px}
+
+  .asset-warning{color:#ffb3b3;font-size:13px;margin-top:8px}
+
+  @media (max-width:520px){
+    #carousel .viewport{height:240px}
+    .track{width:300px}
+    .stage{padding:20px}
+  }
+</style>
+</head>
+<body>
+  <div class="paper">
+    <div class="stage">
+
+      <!-- PAGE 1 -->
+      <section id="page1" class="block">
+        <div id="greet" class="from-left">
+          <h1>Hello Amanda</h1>
+          <p>Kamu yang selalu buat aku terpana, karena senyum manismu dan wajah cantimu :)</p>
+        </div>
+
+        <div id="sliderArea" class="slider-wrap hidden" aria-hidden="true">
+          <div class="track" id="track">
+            <div id="dragger" class="arrow" role="slider" aria-label="Geser panah" tabindex="0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12h14" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="heart" id="heart" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="#ff6b81"><path d="M20.8 7.6a4.6 4.6 0 0 0-6.5 0L12 9.9l-2.3-2.3a4.6 4.6 0 0 0-6.5 6.5L12 22l8.8-8.8a4.6 4.6 0 0 0 0-6.6z"/></svg>
+            </div>
+          </div>
+          <div class="u-small">Geser busur panah sampai menembus hati untuk lanjut :D</div>
+        </div>
+      </section>
+
+      <!-- PAGE 2 -->
+      <section id="page2" class="block hidden" aria-hidden="true">
+        <h1 id="thanks">Terima kasih, sudah penasaran dengan perasaanku ini :)</h1>
+        <p id="confess" class="u-small">Jujur nehh ya, aku kangen banget sama kamu, pas awal kita bertemu, kamu sudah membuatku untuk lebih dekat lagi denganmu:)</p>
+
+        <div id="mediaArea" class="hidden" aria-hidden="true">
+          <div id="carousel">
+            <div class="viewport">
+              <div id="slides" role="list">
+                <!-- Letakkan file: img1.jpg, img2.jpg, img3.jpg, img4.jpg di folder yang sama -->
+                <img class="slide" src="img1.jpg" alt="gambar 1">
+                <img class="slide" src="img2.jpg" alt="gambar 2">
+                <img class="slide" src="img3.jpg" alt="gambar 3">
+                <img class="slide" src="img4.jpg" alt="gambar 4">
+              </div>
+            </div>
+          </div>
+
+          <audio id="music" loop preload="auto" src="bgm.mp3"></audio>
+          <div id="assetWarning" class="asset-warning hidden"></div>
+
+          <div class="u-small" style="margin-top:10px;font-weight:600">Maukah kita bertemu di hari minggu nanti?</div>
+
+          <button id="playOverlay" class="btn btn-primary hidden" style="position:absolute;left:50%;transform:translateX(-50%);bottom:24px;padding:10px 18px">Putar Musik</button>
+        </div>
+
+        <div id="askWrap" class="choice-wrap hidden" aria-hidden="true">
+          <div class="tricky">
+            <button id="mauBtn" class="btn btn-primary">mau</button>
+          </div>
+          <div class="tricky">
+            <button id="noBtn" class="btn btn-ghost">nggak mau</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 3 -->
+      <section id="page3" class="block hidden" aria-hidden="true">
+        <h1>Terima kasih telah menerima ajakanku untuk bertemu di hari minggu nanti, sampai ketemu nanti ya:)</h1>
+        <div class="u-small">Countdown menuju <strong>Minggu, 1 Maret 2026</strong></div>
+        <div class="countdown" id="countdown">
+          <div class="unit"><div id="d">--</div><div class="u-small">hari</div></div>
+          <div class="unit"><div id="h">--</div><div class="u-small">jam</div></div>
+          <div class="unit"><div id="m">--</div><div class="u-small">menit</div></div>
+          <div class="unit"><div id="s">--</div><div class="u-small">detik</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+
+  // helper
+  const $ = id => document.getElementById(id);
+
+  // elements
+  const pg1 = $('page1'), pg2 = $('page2'), pg3 = $('page3');
+  const greet = $('greet'), sliderArea = $('sliderArea');
+  const drag = $('dragger'), track = $('track'), heart = $('heart');
+  const mediaArea = $('mediaArea'), slidesWrap = $('slides');
+  const music = $('music'), playOverlay = $('playOverlay'), assetWarning = $('assetWarning');
+  const photoInput = $('photoInput'), audioInput = $('audioInput');
+  const askWrap = $('askWrap'), mauBtn = $('mauBtn'), noBtn = $('noBtn');
+  const confess = $('confess');
+
+  function showPage(n){
+    if(!pg1 || !pg2 || !pg3) return;
+    pg1.classList.add('hidden'); pg2.classList.add('hidden'); pg3.classList.add('hidden');
+    pg1.setAttribute('aria-hidden','true'); pg2.setAttribute('aria-hidden','true'); pg3.setAttribute('aria-hidden','true');
+    if(n===1){ pg1.classList.remove('hidden'); pg1.removeAttribute('aria-hidden'); }
+    if(n===2){ pg2.classList.remove('hidden'); pg2.removeAttribute('aria-hidden'); }
+    if(n===3){ pg3.classList.remove('hidden'); pg3.removeAttribute('aria-hidden'); }
+  }
+
+  // Show slider after greet animation or fallback
+  if(greet && sliderArea){
+    let opened=false;
+    greet.addEventListener('animationend', ()=>{ sliderArea.classList.remove('hidden'); sliderArea.removeAttribute('aria-hidden'); opened=true; });
+    setTimeout(()=>{ if(!opened){ sliderArea.classList.remove('hidden'); sliderArea.removeAttribute('aria-hidden'); } }, 1000);
+  }
+
+  // Drag logic (guarded)
+  (function(){
+    if(!drag || !track || !heart) return;
+    let dragging=false, startX=0, left=8;
+    function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+    function pointerDown(e){
+      dragging=true; drag.style.transition='none';
+      startX = (e.touches ? e.touches[0].clientX : e.clientX);
+      document.addEventListener('pointermove', pointerMove);
+      document.addEventListener('pointerup', pointerUp);
+      document.addEventListener('touchmove', pointerMove, {passive:false});
+      document.addEventListener('touchend', pointerUp);
+    }
+    function pointerMove(e){
+      if(!dragging) return;
+      if(e.cancelable) e.preventDefault();
+      const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+      const dx = clientX - startX;
+      const trackRect = track.getBoundingClientRect();
+      const dragRect = drag.getBoundingClientRect();
+      const minLeft = 8;
+      const maxLeft = Math.max(minLeft, trackRect.width - dragRect.width - 8);
+      let pos = clamp(left + dx, minLeft, maxLeft);
+      drag.style.transform = `translateX(${pos}px)`;
+      // approximate collision check
+      const heartRect = heart.getBoundingClientRect();
+      const dragCenterX = dragRect.left + (dragRect.width/2) + (pos - left);
+      const heartCenterX = heartRect.left + heartRect.width/2;
+      if(Math.abs(heartCenterX - dragCenterX) < 28) { successSlide(); }
+    }
+    function pointerUp(){
+      dragging=false; drag.style.transition='transform 300ms ease'; drag.style.transform = 'translateX(8px)'; left = 8;
+      document.removeEventListener('pointermove', pointerMove);
+      document.removeEventListener('pointerup', pointerUp);
+      document.removeEventListener('touchmove', pointerMove);
+      document.removeEventListener('touchend', pointerUp);
+    }
+    function successSlide(){
+      drag.style.transition='transform 450ms cubic-bezier(.2,.9,.2,1)';
+      const heartRect = heart.getBoundingClientRect();
+      const trackRect = track.getBoundingClientRect();
+      const dragRect = drag.getBoundingClientRect();
+      const target = heartRect.left + heartRect.width/2 - trackRect.left - dragRect.width/2;
+      drag.style.transform = `translateX(${target}px)`;
+      setTimeout(()=>{ showPage(2); startPage2(); }, 520);
+    }
+    drag.addEventListener('pointerdown', pointerDown);
+    drag.addEventListener('touchstart', pointerDown, {passive:false});
+    drag.addEventListener('keydown',(e)=>{ if(e.key==='ArrowRight' || e.key==='Enter') successSlide(); });
+  })();
+
+  // Carousel implementation with robust checks
+  let slideIndex = 0, slideIv = null;
+  function startCarousel(){
+    if(!slidesWrap) return;
+    const slideEls = slidesWrap.querySelectorAll('.slide');
+    if(!slideEls || slideEls.length === 0) return;
+    // set widths
+    slidesWrap.style.width = `${slideEls.length * 100}%`;
+    slideEls.forEach(s => s.style.width = `${100 / slideEls.length}%`);
+    // reset
+    slideIndex = 0;
+    slidesWrap.style.transform = 'translateX(0)';
+    if(slideIv) clearInterval(slideIv);
+    // rotate
+    slideIv = setInterval(()=>{
+      slideIndex = (slideIndex + 1) % slideEls.length;
+      const percent = (100/slideEls.length) * slideIndex;
+      slidesWrap.style.transform = `translateX(-${percent}%)`;
+    }, 3500);
+    // pause/resume when hovered
+    slidesWrap.addEventListener('mouseenter', ()=>{ if(slideIv) clearInterval(slideIv); });
+    slidesWrap.addEventListener('mouseleave', ()=>{ if(slideIv) clearInterval(slideIv); slideIv = setInterval(()=>{ slideIndex = (slideIndex + 1) % slideEls.length; const p=(100/slideEls.length)*slideIndex; slidesWrap.style.transform = `translateX(-${p}%)`; }, 3500); });
+  }
+
+  // Image loading & fallback
+  (function validateImages(){
+    if(!slidesWrap) return;
+    const imgs = Array.from(slidesWrap.querySelectorAll('.slide'));
+    if(imgs.length === 0) return;
+    let pending = imgs.filter(img => !img.complete);
+    // handle onerror / onload for each to ensure placeholder in case of failure
+    imgs.forEach(img => {
+      img.addEventListener('error', ()=> {
+        img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#0b1220"/><text x="50%" y="50%" fill="#9aa4b2" font-size="20" font-family="Arial" text-anchor="middle">Gambar tidak ditemukan</text></svg>';
+      });
+    });
+    // once images loaded or timeout, start carousel and set carousel max width
+    function finalize(){
+      // compute max natural width to avoid upscaling
+      const maxNat = imgs.reduce((m, i) => Math.max(m, i.naturalWidth || 0), 0) || 640;
+      const vw = Math.floor(window.innerWidth * 0.92);
+      const desired = Math.min(maxNat, vw);
+      const carousel = $('carousel');
+      if(carousel) carousel.style.maxWidth = desired + 'px';
+      // start carousel
+      startCarousel();
+    }
+    if(pending.length){
+      let loadedCount=0;
+      pending.forEach(i => i.addEventListener('load', ()=>{ loadedCount++; if(loadedCount === pending.length) finalize(); }));
+      // safety fallback
+      setTimeout(finalize, 1200);
+    } else {
+      finalize();
+    }
+  })();
+
+  // Start Page 2 reliably
+  function startPage2(){
+    // show page
+    showPage(2);
+    // reveal media area and askWrap (don't rely only on transitionend)
+    if(mediaArea){ mediaArea.classList.remove('hidden'); mediaArea.removeAttribute('aria-hidden'); }
+    if(askWrap){ askWrap.classList.remove('hidden'); askWrap.removeAttribute('aria-hidden'); }
+    // start carousel (defensive)
+    startCarousel();
+    // attempt play audio
+    if(music){
+      music.loop = true;
+      music.play().then(()=> {
+        if(playOverlay) playOverlay.classList.add('hidden');
+        if(assetWarning) assetWarning.classList.add('hidden');
+      }).catch(()=> {
+        // autoplay blocked or error. show overlay button and check load status
+        if(playOverlay) playOverlay.classList.remove('hidden');
+        checkAudioStatus();
+      });
+      if(playOverlay) playOverlay.addEventListener('click', ()=>{ music.play().catch(()=>{}); playOverlay.classList.add('hidden'); });
+    }
+  }
+
+  // Check audio loading
+  function checkAudioStatus(){
+    if(!music) return;
+    let audioOk = false;
+    function onCan(){ audioOk = true; cleanup(); hideWarning(); }
+    function onError(){ audioOk = false; cleanup(); showWarning('Musik tidak dapat dimuat (cek nama file bgm.mp3 atau jalankan via server).'); }
+    function cleanup(){ music.removeEventListener('canplaythrough', onCan); music.removeEventListener('error', onError); }
+    function showWarning(msg){ if(assetWarning){ assetWarning.textContent = msg; assetWarning.classList.remove('hidden'); } }
+    function hideWarning(){ if(assetWarning){ assetWarning.classList.add('hidden'); assetWarning.textContent=''; } }
+    music.addEventListener('canplaythrough', onCan);
+    music.addEventListener('error', onError);
+    // fallback: if no canplay/error within 1200ms, show message
+    setTimeout(()=>{ if(!audioOk){ showWarning('Musik mungkin tidak dimuat otomatis. Jika file ada, coba jalankan via server (python -m http.server)'); } }, 1200);
+  }
+
+  // Upload handlers
+  if(photoInput && slidesWrap){
+    photoInput.addEventListener('change', (e)=>{
+      const files = Array.from(e.target.files || []);
+      if(!files.length) return;
+      slidesWrap.innerHTML = '';
+      files.forEach(f => {
+        const img = document.createElement('img');
+        img.className = 'slide';
+        img.alt = f.name;
+        img.src = URL.createObjectURL(f);
+        img.addEventListener('error', ()=>{ img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#0b1220"/><text x="50%" y="50%" fill="#9aa4b2" font-size="20" font-family="Arial" text-anchor="middle">Gambar tidak valid</text></svg>'; });
+        slidesWrap.appendChild(img);
+      });
+      // re-init after small delay
+      setTimeout(()=>{ startCarousel(); }, 300);
+    });
+  }
+
+  if(audioInput && music){
+    audioInput.addEventListener('change', (e)=>{
+      const f = e.target.files && e.target.files[0];
+      if(!f) return;
+      const url = URL.createObjectURL(f);
+      music.src = url;
+      music.play().catch(()=>{ if(playOverlay) playOverlay.classList.remove('hidden'); });
+      if(assetWarning) assetWarning.classList.add('hidden');
+    });
+  }
+
+  // "nggak mau" button behavior
+  if(askWrap && noBtn){
+    function moveRandom(el){
+      try{
+        const parentRect = askWrap.getBoundingClientRect();
+        const x = Math.random() * Math.max(0, parentRect.width - 120);
+        const y = Math.random() * 18 - 6;
+        el.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+      }catch(e){}
+    }
+    noBtn.addEventListener('mouseenter', ()=>moveRandom(noBtn));
+    noBtn.addEventListener('touchstart', ()=>moveRandom(noBtn));
+    noBtn.addEventListener('click', (ev)=>{ ev.preventDefault(); moveRandom(noBtn); });
+  }
+
+  if(mauBtn){
+    mauBtn.addEventListener('click', ()=>{ showPage(3); startCountdown(); });
+  }
+
+  // If user refreshes on page2 (or hash #page2), ensure media visible
+  if(location.hash === '#page2'){
+    startPage2();
+  }
+
+  // initial page
+  showPage(1);
+
+  // clicking slides area opens photoInput (convenience)
+  if(slidesWrap && photoInput){
+    slidesWrap.addEventListener('click', ()=> photoInput.click());
+  }
+
+  // countdown
+  function startCountdown(){
+    const target = new Date('2026-03-01T00:00:00+07:00');
+    const dEl = $('d'), hEl = $('h'), mEl = $('m'), sEl = $('s');
+    if(!dEl||!hEl||!mEl||!sEl) return;
+    function tick(){
+      const now = new Date();
+      let diff = Math.floor((target - now)/1000);
+      if(diff < 0) diff = 0;
+      const days = Math.floor(diff/86400); diff -= days*86400;
+      const hrs = Math.floor(diff/3600); diff -= hrs*3600;
+      const mins = Math.floor(diff/60); const secs = diff - mins*60;
+      dEl.textContent = String(days).padStart(2,'0');
+      hEl.textContent = String(hrs).padStart(2,'0');
+      mEl.textContent = String(mins).padStart(2,'0');
+      sEl.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+}); // DOMContentLoaded
+</script>
+</body>
+</html>
